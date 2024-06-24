@@ -23,21 +23,14 @@ llm_webapp/
       └── index.html
 ```
 
-The app.yaml file specifies the runtime Python version, handlers, service name, and environment variables. By specifying service names, multiple apps can be run in the same GCP project in parallel as distinct services (please note that the first service needs to be set to “default”). Environment variables are used to specify LLM API keys (by default OPENAI_API_KEY), a GCP project ID (GCP_PROJECT_ID), and a Firestore database name (FIRESTORE_DB). These variables need to be specified with valid IDs for the app to work. 
-
-This bot.py file contains the ChatBot class along with the methods needed to facilitate user interactions. While the current example is based on the ChatGPT API, users can swap in other LLMs as long as the behavior of the ChatBot class remains unchanged. The ChatBot class allows to set system prompts, process user input, set the message history, make calls to the underlying LLM’s API, and return the bot’s response. 
-
-The main.py This file creates the Flask app instance and runs the application. It contains the logic for message processing (i.e., user input is fed to the bot, the bot processes the message history, the response is returned to the user) and data collection (message histories are saved to a Firestore database). It also contains condition statements to stop the application after a certain number of turns or when a specific keyword appears in the input. Additional modifications can be made to guide the behavior of the chatbot. 
-
-The prompts.py file contains prompts that are passed to the ChatBot class in order to guide the behavior of the chatbot. The prompts can easily be swapped out for different research applications. 
-
-The requirements.txt file specifies dependencies and library versions. It can be changed according to an application's requirements.
-
-The script.js file contains JavaScript code, which controls the web app's interactive elements. It handles events (like button clicks) and communicates with the server asynchronously using AJAX. 
-
-The style.css file contains the CSS code to define the visual appearance of the web app, including layout, colors, fonts, spacing, and overall design. It can be adjusted to change the design of the chat interface.
-
-The index.html file provides the basic structure for the chatbot interface. It features a user ID input section to unlock chat functionality, a chat history display with an initial bot message, and a form for sending messages. Aside from the initial message, the file should not be altered unless fundamental changes in the user interface are desired.
+- The app.yaml file specifies the runtime Python version, handlers, service name, and environment variables. By specifying service names, multiple apps can be run in the same GCP project in parallel as distinct services (please note that the first service needs to be set to “default”). Environment variables are used to specify LLM API keys (by default OPENAI_API_KEY), a GCP project ID (GCP_PROJECT_ID), and a Firestore database name (FIRESTORE_DB). These variables need to be specified with valid IDs for the app to work. 
+- This bot.py file contains the ChatBot class along with the methods needed to facilitate user interactions. While the current example is based on the ChatGPT API, users can swap in other LLMs as long as the behavior of the ChatBot class remains unchanged. The ChatBot class allows to set system prompts, process user input, set the message history, make calls to the underlying LLM’s API, and return the bot’s response. 
+- The main.py This file creates the Flask app instance and runs the application. It contains the logic for message processing (i.e., user input is fed to the bot, the bot processes the message history, the response is returned to the user) and data collection (message histories are saved to a Firestore database). It also contains condition statements to stop the application after a certain number of turns or when a specific keyword appears in the input. Additional modifications can be made to guide the behavior of the chatbot. 
+- The prompts.py file contains prompts that are passed to the ChatBot class in order to guide the behavior of the chatbot. The prompts can easily be swapped out for different research applications. 
+- The requirements.txt file specifies dependencies and library versions. It can be changed according to an application's requirements.
+- The script.js file contains JavaScript code, which controls the web app's interactive elements. It handles events (like button clicks) and communicates with the server asynchronously using AJAX. 
+- The style.css file contains the CSS code to define the visual appearance of the web app, including layout, colors, fonts, spacing, and overall design. It can be adjusted to change the design of the chat interface.
+- The index.html file provides the basic structure for the chatbot interface. It features a user ID input section to unlock chat functionality, a chat history display with an initial bot message, and a form for sending messages. Aside from the initial message, the file should not be altered unless fundamental changes in the user interface are desired.
 
 Researchers are encouraged to change the prompts in the prompts.py file and the control logic in the main.py file to adapt the current code base for different applications. For example, researchers could prompt the bot to adopt a certain persona by changing a system prompt, or they could integrate a condition statement where the bot reacts in a predetermined way to a specific user input. Similarly, the stopping criterion or the closing message can easily be changed. However, the code template also lends itself to more fundamental changes as long as the overarching logic is preserved.
 
