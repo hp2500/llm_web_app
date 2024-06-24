@@ -44,7 +44,6 @@ def get_session_data(transaction, session_id):
     session['messages'] += 1
     transaction.set(doc_ref, session)
     session['session_id'] = session_id
-    #session['user_id'] = user_id
     return session
 
 def store_data(session_id, user_id, message, sender, history):
