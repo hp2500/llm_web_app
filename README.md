@@ -11,16 +11,16 @@ The current tutorial enables users to deploy API-powered LLM chatbots into Googl
 The source code of the LLM-chatbot app contains several key components that can be adjusted to enable different types of chatbot applications and act as a wrapper for an LLM API (e.g., OpenAI’s ChatGPT API). Below is the directory structure of a basic wrapper app, along with a description of the main components. 
 
 ```
-llm_webapp/\
-├── app.yaml\
-├── bot.py\
-├── main.py\
-├── requirements.txt\
-├── static/\
-│     ├── script.js\
-│     └── style.css\
-└── templates/\
-      └── index.html\
+llm_webapp/
+├── app.yaml
+├── bot.py
+├── main.py
+├── requirements.txt
+├── static/
+│     ├── script.js
+│     └── style.css
+└── templates/
+      └── index.html
 ```
 
 The app.yaml file specifies the runtime Python version, handlers, service name, and environment variables. By specifying service names, multiple apps can be run in the same GCP project in parallel as distinct services (please note that the first service needs to be set to “default”). Environment variables are used to specify LLM API keys (by default OPENAI_API_KEY), a GCP project ID (GCP_PROJECT_ID), and a Firestore database name (FIRESTORE_DB). These variables need to be specified with valid IDs for the app to work. 
