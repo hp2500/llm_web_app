@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chat Bot Demo</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div id="main-container">
+        <div id="user-details">
+            <input type="text" id="user_name" name="user_name" placeholder="Enter ID to unlock chat..." aria-label="User ID">
+            <button id="submit_name">Submit</button>
+        </div>
+        <div id="chat-container">
+            <h2>Chat History</h2>
+            <div id="messages">
+                <div class="message bot">
+                    <p>Hi, how are you today?</p>
+                </div>
+            </div>
+            <form>
+                <input type="text" id="chat_window" name="chat_window" placeholder="Type your message here..." aria-label="Chat message">
+                <button id="send_message" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
